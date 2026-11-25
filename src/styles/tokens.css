@@ -1,0 +1,51 @@
+:root {
+  /* Палітра (з HANDOFF.md) */
+  --c-blue: #004F7B;
+  --c-blue-dark: #003A5B;
+  --c-blue-mid: #13628F;
+  --c-teal: #27586B;
+  --c-brick: #7B2C00;
+  --c-brick-dark: #5E2200;
+  --c-ink: #131313;
+  --c-ink-2: #1C1C1C;
+  --c-ink-line: #313131;
+  --c-bg: #EFEEEC;
+  --c-cream: #EFEDE3;
+  --c-white: #FFFFFF;
+  --c-muted: #444444;
+  --c-muted-2: #5A5A5A;
+  --c-line: #D9D7D2;
+  --c-line-2: #E3E1DC;
+  --c-light-blue: #E1ECF3;
+  --c-on-blue: #D6E3EC;
+  --c-input: #F7F7F5;
+
+  /* Шрифти */
+  --f-display: 'Unbounded Variable', 'Unbounded', sans-serif;
+  --f-body: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
+
+  /* Сітка */
+  --container: 77.5rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --section-y: clamp(3.5rem, 7vw, 6.5rem);
+  --header-h: 4.6875rem;
+
+  /* Скруглення */
+  --r-pill: 62.4375rem;
+  --r-card: 1.5rem;
+  --r-block: 2rem;
+  --r-xl: 2.25rem;
+
+  /* Рух */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --t-fast: .25s;
+  --t-med: .45s;
+
+  --shadow-card: 0 1.125rem 2.5rem rgba(19, 19, 19, .12);
+  --shadow-lift: 0 1.5rem 3rem rgba(19, 19, 19, .14);
+}
+
+@media (max-width: 767px) {
+  :root { --header-h: 4rem; }
+}

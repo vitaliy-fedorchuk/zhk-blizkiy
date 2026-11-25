@@ -1,0 +1,74 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Гумове масштабування: усі розміри в rem, змінюється лише корінь.
+   ≥1200px  — корінь плавно росте з шириною: 17px на 1440 (+6%),
+              18px на 1920 (+12%), максимум 19px; контент обмежений контейнером.
+   768–1199 — фіксований корінь 16px, звичайний адаптив.
+   <768px   — мобільний макет 390px масштабується за шириною екрана. */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: var(--header-h);
+}
+
+@media (min-width: 1200px) {
+  html { font-size: clamp(16px, calc(17px + (100vw - 1440px) / 480), 19px); }
+}
+@media (max-width: 767px) {
+  html { font-size: min(calc(100vw / 390 * 16), 18px); }
+}
+
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  color: var(--c-ink);
+  background: var(--c-bg);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; }
+a { color: var(--c-blue); }
+a:hover { color: var(--c-blue-dark); }
+[hidden] { display: none !important; }
+
+::selection { background: var(--c-blue); color: var(--c-white); }
+
+:focus-visible {
+  outline: 0.1875rem solid var(--c-brick);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -3.75rem;
+  z-index: 200;
+  padding: 0.625rem 1.125rem;
+  border-radius: var(--r-pill);
+  background: var(--c-blue);
+  color: var(--c-white);
+  font-weight: 700;
+  text-decoration: none;
+  transition: top var(--t-fast);
+}
+.skip-link:focus { top: 0.75rem; color: var(--c-white); }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--section-y); }
+
+.band--white { background: var(--c-white); }
+
+/* Lenis */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: clip; }
