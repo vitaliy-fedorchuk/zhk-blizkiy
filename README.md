@@ -11,6 +11,12 @@ npm run build     # статична збірка в dist/ (відносні ш�
 npm run preview   # перегляд зібраного dist/
 ```
 
+## Деплой
+
+Сайт: **https://vitaliy-fedorchuk.github.io/zhk-blizkiy/**
+
+Кожен пуш у `main` автоматично збирає сайт ([deploy.yml](.github/workflows/deploy.yml)) і викладає `dist/` у гілку `gh-pages`, з якої працює GitHub Pages. Оновлення з'являється за 1–2 хвилини.
+
 ## Масштабування
 
 Усі розміри в `rem`, змінюється лише `font-size` у `html` ([base.css](src/styles/base.css)):
