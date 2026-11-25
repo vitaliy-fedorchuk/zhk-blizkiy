@@ -55,6 +55,8 @@ export function initSmoothScroll() {
       lerp: 0.085,
       smoothWheel: true,
       wheelMultiplier: 1,
+      // прокрутка всередині попапу / меню, коли сторінка зупинена
+      allowNestedScroll: true,
     });
     lenis.on('scroll', ({ scroll }) => emit(scroll));
     const raf = (time) => {
